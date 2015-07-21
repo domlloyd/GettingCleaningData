@@ -39,6 +39,18 @@ test_measurements <- read_table("test\\X_test.txt",col_names = colnames)
 test_activities   <- read_table("test\\y_test.txt",col_names = 'ACTIVITY')
 test_subjects     <- read_table("test\\subject_test.txt",col_names = 'SUBJECT')
 
+# replace activity codes with meaningful names from the activity labels file
+# first read our activity lookup file
+activities <- read.table("activity_labels.txt",col.names=c('activity_num','activity_desc'),stringsAsFactors = FALSE)
+
+# now do the replacements on each of train_activities and test_activities
+# a simple for..next loop will do the trick
+for (i in 1:length(activities$activity_desc)) {
+  train_activities <- replace(train_activities,train_activities==i,activities$activity_desc[i])
+  test_activities  <- replace(test_activities,test_activities==i,activities$activity_desc[i])
+}
+
+
 # now column bind (cbind) each set of train and test variables above
 train_all_columns <- cbind(train_subjects,train_activities,train_measurements)
 test_all_columns  <- cbind(test_subjects,test_activities,test_measurements)
@@ -56,6 +68,7 @@ required_vals_subject <- select(mergedset, SUBJECT, ACTIVITY)
 required_vals_std <- select(mergedset, contains("std", ignore.case = TRUE))
 required_vals_mean <- select(mergedset, contains("mean", ignore.case = TRUE))
 
+# This is the MAIN DATA SET with the observations and variables we need
 merged_required_vals <- cbind(required_vals_subject,required_vals_mean,required_vals_std)
 
 # now read the activity mappings
@@ -69,3 +82,4 @@ activities <- read.table("activity_labels.txt",col.names=c('activity_num','activ
 
 
 # create the output file of tidy data
+
