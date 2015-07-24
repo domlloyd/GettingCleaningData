@@ -17,16 +17,22 @@ The tidy data will be produced to a file called AggregatedTidySamsungData in you
 The file has taken the raw data and done the following tasks to obtain the tidy data set. 
 
 1. All 30 test subjects in the raw data were divided between files called test and train. These files have been merged to bring together the observations for all 30 test subjects. (10,299 observations) 
+
 2. The raw data contained the sensor measurements (561 measurements), activity (walking, sitting down), and test subject in different files. These columns were merged together in to one data set. 
+
 3. The final data set only contains the variables from this set which relate to mean and std variables. 
+
 4. The column headings (variable names) have been given meaningful names. The number appended to each variable name corresponds to the relative variable sequence in the raw data file. 
-4. The final data set is aggregated by subject and activity producing only the mean of each variable for the subject/activity shown, e.g. for subject 1 and activity WALKING there will be one line containing the mean of all relevant measurements. 
+
+5. The final data set is aggregated by subject and activity producing only the mean of each variable for the subject/activity shown, e.g. for subject 1 and activity WALKING there will be one line containing the mean of all relevant measurements. 
 
 ## Variable names in the tidy file
 The following variables occur in the tidy file. As mentioned previously, the number appended to each variable corresponds to the variable position in the raw data file.
 
 SUBJECT
+
 ACTIVITY
+
 tBodyAcc_mean_X_1
 tBodyAcc_mean_Y_2
 tBodyAcc_mean_Z_3
