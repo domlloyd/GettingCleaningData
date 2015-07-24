@@ -15,6 +15,7 @@ https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Datas
 The tidy data will be produced to a file called AggregatedTidySamsungData in your R working directory.
 
 The file has taken the raw data and done the following tasks to obtain the tidy data set. 
+
 1. All 30 test subjects in the raw data were divided between files called test and train. These files have been merged to bring together the observations for all 30 test subjects. (10,299 observations) 
 2. The raw data contained the sensor measurements (561 measurements), activity (walking, sitting down), and test subject in different files. These columns were merged together in to one data set. 
 3. The final data set only contains the variables from this set which relate to mean and std variables. 
