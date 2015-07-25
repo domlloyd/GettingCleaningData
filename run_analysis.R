@@ -34,10 +34,10 @@ variable_list <- read.csv("UCIHARDataset\\features.txt",header=FALSE,sep=" ",col
 
 
 # some of the column names contain unusual unusual characters such as (), 
-# so substitute these in the column names by replacing with blank and _ (for hyphens) This will greatly simplify
-# the selection of columns by an analyst
+# so substitute these in the column names by replacing with blank and _ (for hyphens and comma) 
+# This will greatly simplify the selection of columns by an analyst
 stripped_colnames <- gsub('[()]','',variable_list$column_desc)
-stripped_colnames <- gsub('[-]','_',stripped_colnames)
+stripped_colnames <- gsub('[-,]','_',stripped_colnames)
 
 # the column names also contain duplicate values so we will handle that by appending the
 # column number to the end of the column name to guarantee uniqueness. If we don't then 
