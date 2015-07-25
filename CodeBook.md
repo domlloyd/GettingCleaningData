@@ -25,6 +25,8 @@ The file has taken the raw data and done the following tasks to obtain the tidy 
 ## Variable names in the tidy file
 The following variables occur in the tidy file. As mentioned previously, the number appended to each variable corresponds to the variable position in the raw data file.
 
+Variable Name | Variable Description
+--------------|---------------------
 SUBJECT | A number 1-30 representing each of the 30 test subjects.  
 ACTIVITY | 1 WALKING, 2 WALKING_UPSTAIRS, 3 WALKING_DOWNSTAIRS, 4 SITTING, 5 STANDING, 6 LAYING  
 tBodyAcc_mean_X_1 | time domain (50Hz capture) body acceleration x-axial - mean  
